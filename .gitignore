@@ -1,0 +1,46 @@
+# OrthoShield — Git Ignore Rules
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Quarantine — blocked DICOM files kept as evidence (never commit patient data)
+backend/quarantine/
+quarantine/
+
+# Uploads temp dir (in-flight files)
+backend/uploads/
+uploads/
+
+# Environment secrets — NEVER commit these
+backend/.env
+.env
+backend/encryption.key
+encryption.key
+
+# Database
+*.db
+*.sqlite3
+
+# ML artefacts (large binary files — regenerate with train_isolation_forest.py)
+backend/isolation_forest_model.pkl
+backend/feature_scaler.pkl
+
+# Uploaded DICOM files
+backend/uploads/
+
+# Logs
+backend/logs/
+
+# IDE
+.vscode/
+.idea/
+encryption.key
